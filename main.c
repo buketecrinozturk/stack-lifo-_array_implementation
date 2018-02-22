@@ -16,12 +16,12 @@ void reset(void);
  
 void main ()
 {
-    int choice;
-    int option = 1;
+    int secim;
+    int islem = 1;
     s.top = -1;
  
      printf ("Yapmak istediginiz islemi seciniz\n");
-    while (option)
+    while (islem)
     {
         printf ("*************************************\n");
         printf ("      1    -->    PUSH               \n");
@@ -31,8 +31,8 @@ void main ()
         printf ("      5    -->    EXIT           \n");
         printf ("*************************************\n");
         
-        scanf    ("%d", &choice);
-        switch (choice)
+        scanf    ("%d", &secim);
+        switch (secim)
         {
         case 1:
             push();
@@ -44,15 +44,13 @@ void main ()
             display();
             break;
         case 4:
-        	reset();
+            reset();
             break;
         case 5:
-        	option=0;
+            islem=0;
             return;
         }
-       /* fflush (stdin);
-        printf ("Do you want to continue(Type 0 or 1)?\n");
-        scanf    ("%d", &option); */
+    
     }
 }
 /************************************ Eleman ekleme kismi *******************************///buketecrinozturk
@@ -68,7 +66,7 @@ void push ()
     {
         printf ("Eklemek Istediginiz Elemani Giriniz.\n");
         scanf ("%d", &eleman);
-        s.top = s.top + 1; // üstteki eleman yeni eklenen eleman oluyor
+        s.top = s.top + 1; // Ã¼stteki eleman yeni eklenen eleman oluyor
         s.stk[s.top] = eleman;
     }
     return;
@@ -79,7 +77,7 @@ int pop ()
     int eleman;
     if (s.top == - 1)
     {
-        printf ("!!!!!! Yigin Boþ Çýkarma Yapilamaz !!!!!!\n");
+        printf ("!!!!!! Yigin BoÃ¾ Ã‡Ã½karma Yapilamaz !!!!!!\n");
         return (s.top);
     }
     else
@@ -90,7 +88,7 @@ int pop ()
     }
     return(eleman);
 }
-/************************** Elemanlarin Gösterilme Kismi**************************///buketecrinozturk
+/************************** Elemanlarin GÃ¶sterilme Kismi**************************///buketecrinozturk
 void display ()
 {
 	
@@ -110,7 +108,7 @@ void display ()
     }
     printf ("\n");
 }
-/************************** Tüm Yigini Silme Kismi**************************///buketecrinozturk
+/************************** TÃ¼m Yigini Silme Kismi**************************///buketecrinozturk
 void reset()
 {
 	printf ("\n****Yigin Resetleniyor****\n");
